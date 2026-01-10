@@ -1,0 +1,194 @@
+:root{
+  /* Nuit / néon (inspiré de tes images) */
+  --bg0: #070a12;       /* nuit profonde */
+  --bg1: #0a1020;       /* navy */
+  --panel: rgba(9,14,28,.62);
+  --panel2: rgba(10,16,34,.52);
+
+  --text: #e9edf8;
+  --muted: rgba(233,237,248,.68);
+
+  --cyan: #47e6ff;
+  --blue: #2b7bff;
+  --magenta: #ff3aa6;
+  --pink: #ff6bd6;
+  --orange: #ff5a2a;
+  --red: #ff2a2a;
+
+  --stroke: rgba(71,230,255,.20);
+  --stroke2: rgba(255,58,166,.18);
+
+  --shadow: 0 24px 70px rgba(0,0,0,.50);
+  --shadow2: 0 16px 40px rgba(0,0,0,.35);
+
+  --radius: 18px;
+  --radius2: 28px;
+  --max: 1120px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+img,video{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(900px 520px at 18% 10%, rgba(255,58,166,.10), transparent 60%),
+    radial-gradient(900px 520px at 82% 14%, rgba(71,230,255,.10), transparent 60%),
+    radial-gradient(900px 520px at 50% 60%, rgba(255,90,42,.08), transparent 62%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+  overflow-x:hidden;
+}
+
+.bg-ornament{
+  position: fixed;
+  inset:-40vh -20vw auto -20vw;
+  height: 55vh;
+  pointer-events:none;
+  filter: blur(34px);
+  opacity:.55;
+  background:
+    radial-gradient(closest-side, rgba(71,230,255,.14), transparent 70%),
+    radial-gradient(closest-side, rgba(255,58,166,.12), transparent 70%),
+    radial-gradient(closest-side, rgba(255,90,42,.10), transparent 70%);
+  transform: rotate(-8deg);
+}
+
+/* Header */
+.site-header{
+  position: sticky;
+  top:0;
+  z-index: 40;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 16px;
+  background: rgba(7,10,18,.70);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(71,230,255,.18);
+}
+
+/* Brand */
+.brand{ display:flex; gap:12px; align-items:center; min-width: 240px; }
+.brand-mark{
+  width: 48px; height:48px;
+  border-radius: 16px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, rgba(71,230,255,.10), rgba(255,58,166,.10));
+  border: 1px solid rgba(71,230,255,.18);
+  box-shadow: 0 14px 30px rgba(0,0,0,.35);
+}
+.brand-mark-text{
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: rgba(233,237,248,.92);
+}
+.brand-text{ display:flex; flex-direction:column; line-height:1.1; }
+.brand-name{
+  font-family:"Playfair Display", serif;
+  font-weight:600;
+  color: rgba(233,237,248,.95);
+}
+.brand-tag{
+  font-size:.78rem;
+  letter-spacing:.16em;
+  text-transform: uppercase;
+  color: rgba(233,237,248,.58);
+}
+
+/* Nav */
+.main-nav{ display:flex; align-items:center; gap: 12px; }
+.main-nav a{
+  padding: 10px 10px;
+  border-radius: 12px;
+  color: rgba(233,237,248,.78);
+  transition: transform .15s ease, background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.main-nav a:hover{
+  transform: translateY(-1px);
+  background: rgba(71,230,255,.10);
+  color: rgba(233,237,248,.95);
+}
+.nav-cta{
+  border: 1px solid rgba(255,58,166,.22);
+  background: linear-gradient(135deg, rgba(255,58,166,.16), rgba(71,230,255,.10));
+  box-shadow: 0 0 0 1px rgba(71,230,255,.10) inset;
+}
+
+/* Menu mobile */
+.nav-toggle{
+  display:none;
+  width:46px; height:46px;
+  border-radius: 16px;
+  border: 1px solid rgba(71,230,255,.18);
+  background: rgba(9,14,28,.55);
+}
+.nav-toggle span{
+  display:block;
+  width: 22px; height: 2px;
+  margin: 5px auto;
+  border-radius: 99px;
+  background: rgba(233,237,248,.86);
+}
+
+/* Hero */
+.hero{ padding: 56px 18px 28px; }
+.hero-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 44px 22px 34px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius2);
+  background:
+    radial-gradient(1000px 480px at 18% 18%, rgba(71,230,255,.18), transparent 62%),
+    radial-gradient(900px 420px at 78% 26%, rgba(255,58,166,.16), transparent 62%),
+    radial-gradient(900px 420px at 50% 80%, rgba(255,90,42,.12), transparent 62%),
+    linear-gradient(180deg, rgba(9,14,28,.78), rgba(9,14,28,.52));
+  border: 1px solid rgba(71,230,255,.18);
+  box-shadow: var(--shadow);
+}
+
+/* Monogramme grand centré façon référence */
+.hero-monogram-bg{
+  position:absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(560px, 86vw);
+  aspect-ratio: 1/1;
+  border-radius: 999px;
+  display:grid;
+  place-items:center;
+  pointer-events:none;
+  opacity: .95;
+}
+
+.hero-monogram-bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:999px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(71,230,255,.16), transparent 56%),
+    radial-gradient(circle at 50% 50%, rgba(255,58,166,.14), transparent 64%),
+    radial-gradient(circle at 50% 56%, rgba(255,90,42,.10), transparent 70%);
+  filter: blur(.2px);
+}
+
+.hero-monogram-bg::after{
+  content:"";
+  position:absolute;
+  inset: 34px;
+  border-radius:999px;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,.06), transparent 55%),
+    radial-gradient(circle at 50% 55%, rgba(0,0,0,.28), transparent 72%);
+  border: 1px solid rgba(71,230,255,.14);
+  box-shadow: 0 26px 90px rgba(0,0,0,.45);
+}
+
+.hero-monogram-bg img{
+  position: relative
