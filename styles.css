@@ -356,3 +356,28 @@ a:hover { text-decoration: none; }
   .videos{ grid-template-columns: 1fr; }
   .video-frame video{ height: 240px; }
 }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 12, 20, .55);
+  border: 1px solid rgba(90, 120, 255, .22);
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+  overflow: hidden;
+}
+
+.brand-monogram{
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.55));
+}
