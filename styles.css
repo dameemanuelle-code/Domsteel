@@ -548,3 +548,197 @@ input:focus, textarea:focus{
   .hero-monogram-bg{ width: min(240px, 76vw); top: 10px; }
   .hero-monogram-bg img{ width: 112px; }
 }
+/* =========================================================
+   HOTFIX — Header actuel + Hero cercle/monogramme
+   (à coller TOUT EN BAS de styles.css)
+   ========================================================= */
+
+/* --- HEADER : rendre le haut lisible et sur une ligne --- */
+/* On vise plusieurs noms possibles (selon ton HTML) */
+header,
+.site-header,
+.header,
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(5, 8, 20, 0.70);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(110, 140, 255, 0.10);
+}
+
+/* Conteneur interne (peu importe son nom) */
+.header-inner,
+.header-container,
+.topbar-inner,
+.header-wrap{
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* Si tu n’as PAS de conteneur interne, on aligne directement le header */
+header:not(.site-header):not(.header):not(.topbar){
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* Bloc logo + titres */
+.brand,
+.brand-block,
+.branding,
+.left,
+.header-left{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+}
+
+/* Le "DS" -> petit monogramme */
+.logo,
+.brand-logo,
+.mark{
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: rgba(10, 14, 36, 0.60);
+  box-shadow:
+    0 0 0 1px rgba(47, 75, 255, 0.16),
+    0 0 22px rgba(47, 75, 255, 0.10);
+}
+
+/* Si tu mets une image */
+.logo img,
+.brand-logo img,
+.mark img{
+  width: 20px;
+  height: auto;
+  opacity: .95;
+}
+
+/* Si tu as encore "DS" en texte */
+.logo span,
+.brand-logo span,
+.mark span{
+  font-weight: 800;
+  letter-spacing: .08em;
+  font-size: .85rem;
+  color: rgba(233,236,246,0.92);
+}
+
+/* Nom Domsteel plus lisible */
+.brand-title strong,
+.brand-name,
+.site-title,
+.title{
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  letter-spacing: .03em;
+  font-size: 1.05rem;
+  color: rgba(233,236,246,0.95);
+}
+
+.brand-title small,
+.brand-tagline,
+.tagline,
+.subtitle{
+  display: block;
+  margin-top: 2px;
+  color: rgba(233,236,246,0.62);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .68rem;
+}
+
+/* Nav (menu) */
+nav,
+.main-nav,
+.nav,
+.menu{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+nav a,
+.main-nav a,
+.nav a,
+.menu a{
+  color: rgba(233,236,246,0.82);
+  font-size: .95rem;
+  text-decoration: none;
+}
+
+nav a:hover,
+.main-nav a:hover,
+.nav a:hover,
+.menu a:hover{
+  color: rgba(233,236,246,0.98);
+}
+
+/* Bouton "Me joindre" si c’est un lien avec classe */
+.nav-cta,
+.cta,
+.btn-cta{
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255,58,166,0.22), rgba(47,75,255,0.18));
+  border: 1px solid rgba(110, 140, 255, 0.14);
+  box-shadow: 0 0 0 1px rgba(255,58,166,0.08);
+}
+
+/* --- HERO : cercle + monogramme exactement comme demandé --- */
+.hero-card{
+  overflow: hidden; /* garantit qu’on voit bien tout propre */
+}
+
+/* cercle un peu plus petit, visible au complet, plus haut */
+.hero-monogram-bg{
+  top: 6px !important;
+  width: min(220px, 54vw) !important;
+  opacity: 0.98;
+}
+
+/* monogramme plus gros dans le cercle */
+.hero-monogram-bg img{
+  width: 140px !important;
+  height: auto !important;
+}
+
+/* On donne assez de place au-dessus du texte pour ne pas “manger” le cercle */
+.hero-inner{
+  padding-top: 170px !important;
+}
+
+/* Mobile : éviter l’empilage */
+@media (max-width: 900px){
+  nav,
+  .main-nav,
+  .nav,
+  .menu{
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 560px){
+  .hero-monogram-bg{
+    width: min(210px, 72vw) !important;
+  }
+  .hero-monogram-bg img{
+    width: 128px !important;
+  }
+}
