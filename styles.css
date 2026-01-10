@@ -441,7 +441,16 @@ body{
   font-weight: 600;
 }
 video{ width: 100%; height: 220px; object-fit: cover; }
+.videos{
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
 
+@media (max-width: 980px){
+  .videos{ grid-template-columns: 1fr; }
+}
 /* Formulaire */
 .form{ display:grid; gap: 10px; }
 label{
