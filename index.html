@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,14 +15,17 @@
 <body>
   <div class="bg-ornament" aria-hidden="true"></div>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="brand">
+      <!-- mini monogramme (remplace DS) -->
       <span class="brand-mark" aria-hidden="true">
-  <img class="brand-monogram" src="images/monogramme-DS3.png" alt="" />
-</span>
+        <img src="images/monogram-domsteel.png" alt="" />
+      </span>
+
       <div class="brand-text">
         <div class="brand-name">Domsteel</div>
-      
+        <div class="brand-tag">CUIR • NÉON • MAÎTRISE</div>
       </div>
     </div>
 
@@ -42,118 +45,123 @@
   <main>
     <!-- HERO -->
     <section class="hero" id="accueil">
-      <div class="hero-inner">
-
-        <!-- Monogramme : cercle plus petit + plus haut -->
-        <div class="hero-monogram-bg hero-monogram--small" aria-hidden="true">
-          <img src="images/Monogramme-DS3.png" alt="">
-        </div>
-
-        <p class="eyebrow">SIGNATURE DOMSTEEL</p>
-        <h1>Une présence forte, une esthétique maîtrisée.</h1>
-        <p class="hero-lead">
-          Domsteel incarne une approche précise et assurée : posture, contrôle, et intensité mesurée.
-          Chaque séance est construite avec intention — calme, rigueur, et une attention réelle au cadre.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Demander une session</a>
-          <a class="btn btn-ghost" href="#galerie">Voir la galerie</a>
-        </div>
-
-        <div class="hero-card">
-          <div class="hero-card-row">
-            <span class="pill">Présence</span>
-            <span class="pill">Maîtrise</span>
-            <span class="pill">Rigueur</span>
+      <div class="hero-card">
+        <div class="hero-monogram-bg" aria-hidden="true">
+          <div class="hero-circle">
+            <!-- grand monogramme -->
+            <img src="images/monogram-domsteel.png" alt="" />
           </div>
-          
+        </div>
+
+        <div class="hero-inner">
+          <div class="eyebrow">SIGNATURE DOMSTEEL</div>
+
+          <h1>Une présence forte, une esthétique maîtrisée.</h1>
+
+          <p class="lead">
+            Domsteel incarne une approche précise et assurée : posture, contrôle, et intensité mesurée.
+            Chaque séance est construite avec intention — calme, rigueur, et une attention réelle au cadre.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Demander une session</a>
+            <a class="btn btn-ghost" href="#galerie">Voir la galerie</a>
+          </div>
+
+          <div class="chips" aria-label="Mots-clés">
+            <span class="chip">Présence</span>
+            <span class="chip">Maîtrise</span>
+            <span class="chip">Rigueur</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- A PROPOS -->
-    <section class="section section-alt" id="apropos">
+    <section class="section" id="apropos">
       <div class="section-inner">
         <header class="section-head">
           <h2>À propos</h2>
-          
+          <p class="section-subtitle">Une présence nette, une conduite structurée, un rituel moderne.</p>
         </header>
 
-        <div class="two-col">
-          <article class="card">
+        <div class="grid-two">
+          <article class="panel">
             <h3>Style & intention</h3>
             <p>
-              Domsteel privilégie la netteté : consignes simples, progression maîtrisée,
-              et un cadre posé avec sérieux. Le rituel se construit sur la confiance,
-              l’attention, et le contrôle.
+              Domsteel privilégie la netteté : consignes simples, progression maîtrisée, et un cadre posé avec sérieux.
+              Le rituel se construit sur la confiance, l’attention, et le contrôle.
             </p>
-            
           </article>
 
-          
+          <article class="panel">
+            <h3>Atmosphère</h3>
+            <p>
+              Une esthétique nocturne, électrique, et sobre. Le contraste est volontaire : calme extérieur,
+              intensité calibrée. Rien n’est laissé au hasard.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- GALERIE -->
-    <section class="section" id="galerie">
+    <section class="section section-alt" id="galerie">
       <div class="section-inner">
         <header class="section-head">
           <h2>Galerie</h2>
-          
+          <p class="section-subtitle">8 visuels — clique pour agrandir.</p>
         </header>
 
         <div class="gallery">
-          <figure class="media"><img src="images/Domsteel2.jpeg" alt="Galerie 1"></figure>
-          <figure class="media"><img src="images/Domsteel3.jpeg" alt="Galerie 2"></figure>
-          <figure class="media"><img src="images/Domsteel4.jpeg" alt="Galerie 3"></figure>
-          <figure class="media"><img src="images/g4.jpg" alt="Galerie 4"></figure>
-          <figure class="media"><img src="images/g5.jpg" alt="Galerie 5"></figure>
-          <figure class="media"><img src="images/g6.jpg" alt="Galerie 6"></figure>
-          <figure class="media"><img src="images/g7.jpg" alt="Galerie 7"></figure>
-          <figure class="media"><img src="images/g8.jpg" alt="Galerie 8"></figure>
+          <!-- Remplace par tes vrais fichiers -->
+          <figure class="media"><img src="images/g1.jpeg" alt="Galerie 1"></figure>
+          <figure class="media"><img src="images/g2.jpeg" alt="Galerie 2"></figure>
+          <figure class="media"><img src="images/g3.jpeg" alt="Galerie 3"></figure>
+          <figure class="media"><img src="images/g4.jpeg" alt="Galerie 4"></figure>
+          <figure class="media"><img src="images/g5.jpeg" alt="Galerie 5"></figure>
+          <figure class="media"><img src="images/g6.jpeg" alt="Galerie 6"></figure>
+          <figure class="media"><img src="images/g7.jpeg" alt="Galerie 7"></figure>
+          <figure class="media"><img src="images/g8.jpeg" alt="Galerie 8"></figure>
         </div>
       </div>
     </section>
 
     <!-- CLIPS -->
-<section class="section section-alt" id="clips">
-  <div class="section-inner">
-    <header class="section-head">
-      <h2>Clips</h2>
-     
-    </header>
+    <section class="section" id="clips">
+      <div class="section-inner">
+        <header class="section-head">
+          <h2>Clips</h2>
+          <p class="section-subtitle">Clips courts — simples, propres, immersifs.</p>
+        </header>
 
-    <div class="videos">
-      <div class="video-card">
-        <div class="video-frame">
-          <video src="videos/clip1.mp4" muted loop playsinline controls></video>
-        </div>
-        <h3>Clip 1</h3>
-      </div>
+        <div class="videos">
+          <div class="video-card">
+            <div class="video-frame">
+              <video src="videos/clip1.mp4" controls playsinline preload="metadata"></video>
+            </div>
+            <h3>Clip 1</h3>
+          </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <video src="videos/clip2.mp4" muted loop playsinline controls></video>
-        </div>
-        <h3>Clip 2</h3>
-      </div>
+          <div class="video-card">
+            <div class="video-frame">
+              <video src="videos/clip2.mp4" controls playsinline preload="metadata"></video>
+            </div>
+            <h3>Clip 2</h3>
+          </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <video src="videos/clip3.mp4" muted loop playsinline controls></video>
+          <div class="video-card">
+            <div class="video-frame">
+              <video src="videos/clip3.mp4" controls playsinline preload="metadata"></video>
+            </div>
+            <h3>Clip 3</h3>
+          </div>
         </div>
-        <h3>Clip 3</h3>
       </div>
-    </div>
-  </div>
-</section>
-            
-        
+    </section>
 
     <!-- CONTACT -->
-    <section class="section" id="contact">
+    <section class="section section-alt" id="contact">
       <div class="section-inner">
         <header class="section-head">
           <h2>Contact</h2>
@@ -162,59 +170,34 @@
           </p>
         </header>
 
-        <div class="two-col">
-          <div class="card">
-            <form class="form" action="mailto:TON_EMAIL_ICI" method="post" enctype="text/plain">
-              <label>
-                Nom / Pseudonyme
-                <input type="text" name="name" placeholder="Votre nom" required>
-              </label>
+        <div class="panel">
+          <form class="contact-form" action="#" method="post" onsubmit="return false;">
+            <div class="form-row">
+              <label>Nom</label>
+              <input type="text" placeholder="Votre nom" />
+            </div>
+            <div class="form-row">
+              <label>Courriel</label>
+              <input type="email" placeholder="nom@exemple.com" />
+            </div>
+            <div class="form-row">
+              <label>Message</label>
+              <textarea rows="5" placeholder="Votre message..."></textarea>
+            </div>
 
-              <label>
-                Courriel
-                <input type="email" name="email" placeholder="votre@email.com" required>
-              </label>
-
-              <label>
-                Message
-                <textarea name="message" rows="6" placeholder="Décrivez votre demande..." required></textarea>
-              </label>
-
-              <div class="form-actions">
-                <button class="btn btn-primary" type="submit">Envoyer</button>
-                <a class="btn btn-ghost" href="#accueil">Retour haut</a>
-              </div>
-
-    
-            </form>
-          </div>
-
-          <aside class="card">
-            <h3>Cadre</h3>
-            <ul class="list">
-              <li>Confidentialité et respect</li>
-              <li>Préparation et clarté avant séance</li>
-              <li>Réponse selon disponibilité</li>
-            </ul>
-          </aside>
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+            <p class="form-note">* Formulaire visuel (si tu veux qu’il envoie réellement, on le branchera ensuite).</p>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Lightbox -->
+  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">×</button>
-    <img class="lightbox-img" id="lightboxImg" alt="">
-    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <button class="lightbox-close" aria-label="Fermer">×</button>
+    <img class="lightbox-img" alt="" />
   </div>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="footer-brand">Domsteel — Cuir et Fantaisies</p>
-      <p class="muted">© <span id="year"></span> — Tous droits réservés</p>
-    </div>
-  </footer>
 
   <script src="script.js"></script>
 </body>
