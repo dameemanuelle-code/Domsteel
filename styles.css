@@ -169,7 +169,20 @@ body{
   pointer-events:none;
   opacity: .95;
 }
-
+.hero-circle {
+  width: 260px;        /* ↓ plus petit */
+  height: 260px;
+  margin: 0 auto 2rem; /* espace sous le cercle */
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(40, 60, 140, 0.25),
+    rgba(5, 8, 20, 0.85)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* Cercle plus petit + plus haut (demandé) */
 .hero-monogram--small{
   top: -78px;
@@ -208,7 +221,10 @@ body{
   filter: drop-shadow(0 22px 44px rgba(0,0,0,.58)) saturate(1.10) contrast(1.06);
   opacity: .96;
 }
-
+.hero-circle img {
+  width: 110px;   /* ↑ monogramme plus gros */
+  height: auto;
+}
 /* Content above */
 .hero-inner > *:not(.hero-monogram-bg){ position:relative; z-index:3; }
 
