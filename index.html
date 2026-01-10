@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Domsteel — Cuir et Fantaisies</title>
+
+  <!-- Police élégante + moderne (optionnel mais recommandé) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg-ornament" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark brand-mark--text" aria-hidden="true">
+        <span class="brand-mark-text">DS</span>
+      </span>
+      <div class="brand-text">
+        <div class="brand-name">Domsteel</div>
+        <div class="brand-tag">Cuir • Néon • Maîtrise</div>
+      </div>
+    </div>
+
+    <button class="nav-toggle" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navigation">
+      <a href="#apropos">À propos</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#clips">Clips</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Me joindre</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="accueil">
+      <div class="hero-inner">
+        <!-- Monogramme façon “Lady Zaphir” mais cyberpunk -->
+        <div class="hero-monogram-bg" aria-hidden="true">
+          <img src="images/monogramme-domsteel.png" alt="">
+        </div>
+
+        <p class="eyebrow">Signature Domsteel</p>
+        <h1>Une présence nette. Une esthétique électrique.</h1>
+        <p class="hero-lead">
+          Un univers nocturne et raffiné : bleu profond, néons cyan et magenta, éclats rouge-orangé.
+          Une approche précise, maîtrisée, et pensée comme un rituel moderne.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Demander une session</a>
+          <a class="btn btn-ghost" href="#galerie">Voir la galerie</a>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-row">
+            <span class="pill">Nuit & Néon</span>
+            <span class="pill">Épure</span>
+            <span class="pill">Galerie & Clips</span>
+          </div>
+          <p class="hero-card-note muted">
+            Remplace facilement les médias : 8 photos + clips courts (MP4).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A PROPOS -->
+    <section class="section section-alt" id="apropos">
+      <div class="section-inner">
+        <header class="section-head">
+          <h2>À propos</h2>
+          <p class="section-subtitle">
+            Une présentation claire, élégante, et calibrée pour le confort et la confiance.
+          </p>
+        </header>
+
+        <div class="two-col">
+          <article class="card">
+            <h3>Style & intention</h3>
+            <p>
+              Ici, l’esthétique néon reste <strong>sobriété + précision</strong> :
+              lignes nettes, contrastes contrôlés, et détails lumineux sans excès.
+            </p>
+            <p class="muted">
+              Astuce : ton monogramme (PNG transparent) s’affiche en grand dans le hero,
+              et tu peux garder “DS” dans le header.
+            </p>
+          </article>
+
+          <aside class="card">
+            <h3>Repères</h3>
+            <ul class="list">
+              <li><strong>Palette</strong> : nuit / cyan / magenta / rouge-orangé</li>
+              <li><strong>Sections</strong> : galerie (8), clips, contact</li>
+              <li><strong>Mobile</strong> : menu compact + grilles adaptatives</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section class="section" id="galerie">
+      <div class="section-inner">
+        <header class="section-head">
+          <h2>Galerie</h2>
+          <p class="section-subtitle">8 images — format uniforme, néon maîtrisé.</p>
+        </header>
+
+        <div class="gallery">
+          <!-- Remplace g1.jpg ... g8.jpg -->
+          <figure class="media"><img src="images/g1.jpg" alt="Galerie 1"></figure>
+          <figure class="media"><img src="images/g2.jpg" alt="Galerie 2"></figure>
+          <figure class="media"><img src="images/g3.jpg" alt="Galerie 3"></figure>
+          <figure class="media"><img src="images/g4.jpg" alt="Galerie 4"></figure>
+          <figure class="media"><img src="images/g5.jpg" alt="Galerie 5"></figure>
+          <figure class="media"><img src="images/g6.jpg" alt="Galerie 6"></figure>
+          <figure class="media"><img src="images/g7.jpg" alt="Galerie 7"></figure>
+          <figure class="media"><img src="images/g8.jpg" alt="Galerie 8"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIPS -->
+    <section class="section section-alt" id="clips">
+      <div class="section-inner">
+        <header class="section-head">
+          <h2>Clips</h2>
+          <p class="section-subtitle">Clips courts — boucle discrète, rendu premium.</p>
+        </header>
+
+        <div class="videos">
+          <div class="video-card">
+            <div class="video-frame">
+              <video src="videos/c1.mp4" muted loop playsinline controls></video>
+            </div>
+            <h3>Clip 1</h3>
+            <p class="muted">Remplace par ton MP4 (c1.mp4).</p>
+          </div>
+
+          <div class="video-card">
+            <div class="video-frame">
+              <video src="videos/c2.mp4" muted loop playsinline controls></video>
+            </div>
+            <h3>Clip 2</h3>
+            <p class="muted">Remplace par ton MP4 (c2.mp4).</p>
+          </div>
+
+          <div class="video-card">
+            <div class="video-frame">
+              <video src="videos/c3.mp4" muted loop playsinline controls></video>
+            </div>
+            <h3>Clip 3</h3>
+            <p class="muted">Remplace par ton MP4 (c3.mp4).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-inner">
+        <header class="section-head">
+          <h2>Contact</h2>
+          <p class="section-subtitle">Une demande claire, structurée, et confidentielle.</p>
+        </header>
+
+        <!-- Version simple mailto (sans service externe) -->
+        <div class="two-col">
+          <div class="card">
+            <form class="form" action="mailto:TON_EMAIL_ICI" method="post" enctype="text/plain">
+              <label>
+                Nom / Pseudonyme
+                <input type="text" name="name" placeholder="Votre nom" required>
+              </label>
+
+              <label>
+                Courriel
+                <input type="email" name="email" placeholder="votre@email.com" required>
+              </label>
+
+              <label>
+                Message
+                <textarea name="message" rows="6" placeholder="Décrivez votre demande (disponibilités, intention, limites)..." required></textarea>
+              </label>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Envoyer</button>
+                <a class="btn btn-ghost" href="#accueil">Retour haut</a>
+              </div>
+
+              <p class="muted form-note">
+                Pour une réception “pro” sans mailto (Formspree), dis-moi et je te le branche.
+              </p>
+            </form>
+          </div>
+
+          <aside class="card">
+            <h3>Cadre</h3>
+            <ul class="list">
+              <li>Réponse selon disponibilité</li>
+              <li>Confidentialité et respect</li>
+              <li>Préparation et clarté avant séance</li>
+            </ul>
+
+            <div class="code-like mono muted">
+              Media paths: <br>
+              images/g1.jpg ... g8.jpg<br>
+              videos/c1.mp4 ... c3.mp4<br>
+              monogramme: images/monogramme-domsteel.png
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">×</button>
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Domsteel — Cuir et Fantaisies</p>
+      <p class="muted">© <span id="year"></span> — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
