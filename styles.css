@@ -490,3 +490,84 @@ input:focus, textarea:focus{
   .videos{ grid-template-columns: 1fr; }
   .hero-monogram-bg{ width: min(300px, 74vw); top: 8px; }
 }
+/* ===== HERO (réparation layout) ===== */
+.hero{
+  padding: 5.5rem 1.5rem 2.5rem;
+}
+
+.hero-card{
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 28px;
+  padding: 3.25rem 3rem 2.25rem;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 30px 110px rgba(0,0,0,.55);
+  position: relative;
+  overflow: hidden;
+
+  /* IMPORTANT : évite le “hero écrasé” */
+  min-height: 420px;
+
+  /* Layout : texte à gauche, monogramme à droite */
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.hero-inner{
+  position: relative;
+  z-index: 2;
+}
+
+.hero-monogram-bg{
+  /* IMPORTANT : on enlève l’absolu qui coupe tout */
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+}
+
+.hero-circle{
+  width: 280px;
+  height: 280px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at center,
+    rgba(20, 40, 110, .28),
+    rgba(5, 8, 20, .88)
+  );
+  border: 1px solid rgba(80, 110, 255, .16);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.06),
+    0 0 70px rgba(10, 25, 75, .45);
+}
+
+.hero-circle img{
+  width: 62%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,.55));
+}
+
+/* La rangée “Présence / Maîtrise / Rigueur” reste sous le texte */
+.hero-pills, .pills, .hero-tags{
+  margin-top: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero-card{
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 2.25rem 1.5rem 1.5rem;
+  }
+  .hero-circle{
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+  }
+}
