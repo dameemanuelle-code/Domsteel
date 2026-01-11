@@ -1,4 +1,4 @@
-// Menu mobile
+// ===== MENU MOBILE =====
 const navToggle = document.querySelector(".nav-toggle");
 const mainNav = document.querySelector(".main-nav");
 
@@ -14,27 +14,29 @@ if (navToggle && mainNav) {
   });
 }
 
-// Lightbox galerie
+// ===== LIGHTBOX GALERIE =====
 const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-const lightboxCaption = document.getElementById("lightboxCaption");
-const lightboxClose = document.getElementById("lightboxClose");
+const lightboxImg = document.querySelector(".lightbox-img");
+const lightboxClose = document.querySelector(".lightbox-close");
 
-document.querySelectorAll(".media img").forEach((img) => {
-  img.addEventListener("click", () => {
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt || "Image";
-    lightboxCaption.textContent = img.alt || "";
-  });
-});
+function openLightbox(src, alt) {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || "";
+  lightbox.classList.add("open");
+  lightbox.setAttribute("aria-hidden", "false");
+}
 
 function closeLightbox() {
+  if (!lightbox || !lightboxImg) return;
   lightbox.classList.remove("open");
   lightbox.setAttribute("aria-hidden", "true");
   lightboxImg.src = "";
 }
+
+document.querySelectorAll(".gallery .media img").forEach((img) => {
+  img.addEventListener("click", () => openLightbox(img.src, img.alt));
+});
 
 if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
 if (lightbox) {
@@ -45,7 +47,3 @@ if (lightbox) {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
 });
-
-// Année footer
-const yearEl = document.getElementById("year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
