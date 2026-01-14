@@ -106,3 +106,77 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.classList.contains("open")) closeClip();
   });
 })();
+// ====== CLIPS (YouTube/Vimeo/MP4) ======
+const clipsModal = document.getElementById("clipsModal");
+const clipsModalTitle = document.getElementById("clipsModalTitle");
+const clipsMedia = clipsModal ? clipsModal.querySelector(".modal-media") : null;
+
+function openClipModal({ type, src, title }) {
+  if (!clipsModal || !clipsMedia) return;
+
+  clipsModalTitle.textContent = title || "";
+
+  // vide le contenu précédent (important pour arrêter YouTube)
+  clipsMedia.innerHTML = "";
+
+  const frame = document.createElement("div");
+  frame.className = "frame";
+
+  if (type === "embed") {
+    const iframe = document.createElement("iframe");
+    iframe.src = src;
+    iframe.title = title || "Clip";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.loading = "lazy";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    frame.appendChild(iframe);
+  } else if (type === "mp4") {
+    const video = document.createElement("video");
+    video.src = src;
+    video.controls = true;
+    video.playsInline = true; // iPad/iPhone
+    video.preload = "metadata";
+    frame.appendChild(video);
+  }
+
+  clipsMedia.appendChild(frame);
+
+  clipsModal.classList.add("open");
+  clipsModal.setAttribute("aria-hidden", "false");
+
+  // ferme avec ESC
+  document.addEventListener("keydown", onEscClose);
+}
+
+function closeClipModal() {
+  if (!clipsModal || !clipsMedia) return;
+
+  clipsModal.classList.remove("open");
+  clipsModal.setAttribute("aria-hidden", "true");
+
+  // vide pour arrêter l’audio/vidéo
+  clipsMedia.innerHTML = "";
+  document.removeEventListener("keydown", onEscClose);
+}
+
+function onEscClose(e) {
+  if (e.key === "Escape") closeClipModal();
+}
+
+// Clic sur une carte
+document.querySelectorAll(".clip-card").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const type = btn.dataset.clipType; // "embed" ou "mp4"
+    const src = btn.dataset.clipSrc;
+    const title = btn.dataset.clipTitle || "";
+    if (!type || !src) return;
+    openClipModal({ type, src, title });
+  });
+});
+
+// Fermeture (backdrop + bouton X)
+document.querySelectorAll("[data-modal-close]").forEach((el) => {
+  el.addEventListener("click", closeClipModal);
+});
