@@ -126,38 +126,70 @@
       </div>
     </section>
 
-    <!-- CLIPS -->
-    <section class="section" id="clips">
-      <div class="section-inner">
-        <header class="section-head">
-          <h2>Clips</h2>
-          <p class="section-subtitle">Clips courts — simples, propres, immersifs.</p>
-        </header>
+<!-- CLIPS -->
+<section class="section section-alt" id="clips">
+  <div class="section-inner">
+    <header class="section-head">
+      <h2>Clips</h2>
+      <p class="section-subtitle">Extraits — cliquez pour ouvrir.</p>
+    </header>
 
-        <div class="videos">
-          <div class="video-card">
-            <div class="video-frame">
-              <video src="videos/clip1.mp4" controls playsinline preload="metadata"></video>
-            </div>
-            <h3>Clip 1</h3>
-          </div>
+    <div class="clips-grid">
+      <!-- YOUTUBE / VIMEO -->
+      <button class="clip-card" type="button"
+        data-clip-type="embed"
+        data-clip-src="https://www.youtube.com/embed/VIDEO_ID"
+        data-clip-title="Clip 1 — Teaser">
+        <span class="clip-thumb">
+          <span class="clip-play" aria-hidden="true">▶</span>
+        </span>
+        <span class="clip-meta">
+          <span class="clip-title">Clip 1 — Teaser</span>
+          <span class="clip-sub">YouTube</span>
+        </span>
+      </button>
 
-          <div class="video-card">
-            <div class="video-frame">
-              <video src="videos/clip2.mp4" controls playsinline preload="metadata"></video>
-            </div>
-            <h3>Clip 2</h3>
-          </div>
+      <button class="clip-card" type="button"
+        data-clip-type="embed"
+        data-clip-src="https://player.vimeo.com/video/VIDEO_ID"
+        data-clip-title="Clip 2 — Atmosphère">
+        <span class="clip-thumb">
+          <span class="clip-play" aria-hidden="true">▶</span>
+        </span>
+        <span class="clip-meta">
+          <span class="clip-title">Clip 2 — Atmosphère</span>
+          <span class="clip-sub">Vimeo</span>
+        </span>
+      </button>
 
-          <div class="video-card">
-            <div class="video-frame">
-              <video src="videos/clip3.mp4" controls playsinline preload="metadata"></video>
-            </div>
-            <h3>Clip 3</h3>
-          </div>
-        </div>
-      </div>
-    </section>
+      <!-- MP4 LOCAL (ex: /clips/c1.mp4) -->
+      <button class="clip-card" type="button"
+        data-clip-type="mp4"
+        data-clip-src="clips/c1.mp4"
+        data-clip-title="Clip 3 — Extrait">
+        <span class="clip-thumb">
+          <span class="clip-play" aria-hidden="true">▶</span>
+        </span>
+        <span class="clip-meta">
+          <span class="clip-title">Clip 3 — Extrait</span>
+          <span class="clip-sub">MP4</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL CLIPS -->
+<div class="clip-modal" id="clipModal" aria-hidden="true" role="dialog" aria-label="Lecture du clip">
+  <div class="clip-modal__overlay" data-clip-close></div>
+
+  <div class="clip-modal__panel" role="document">
+    <button class="clip-modal__close" type="button" aria-label="Fermer" data-clip-close>✕</button>
+    <div class="clip-modal__title" id="clipModalTitle"></div>
+
+    <div class="clip-player" id="clipPlayer"></div>
+  </div>
+</div>
 
     <!-- CONTACT -->
     <section class="section section-alt" id="contact">
