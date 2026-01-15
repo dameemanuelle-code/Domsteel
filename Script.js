@@ -180,3 +180,94 @@ document.querySelectorAll(".clip-card").forEach((btn) => {
 document.querySelectorAll("[data-modal-close]").forEach((el) => {
   el.addEventListener("click", closeClipModal);
 });
+// ====== CLIPS INLINE PLAYER ======
+(function () {
+  const cards = document.querySelectorAll(".clip-card");
+
+  function stopAllExcept(exceptCard) {
+    document.querySelectorAll(".clip-card.is-playing").forEach((card) => {
+      if (card === exceptCard) return;
+
+      const holder = card.querySelector(".clip-holder");
+      if (holder) holder.remove();
+
+      // Remet l’overlay play visible
+      const play = card.querySelector(".clip-play");
+      if (play) play.style.display = "";
+
+      card.classList.remove("is-playing");
+      card.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  function buildEmbed(src, title) {
+    const iframe = document.createElement("iframe");
+    // autoplay + mute aide sur plusieurs navigateurs; YouTube ignore parfois l’autoplay selon le contexte
+    const join = src.includes("?") ? "&" : "?";
+    iframe.src = `${src}${join}autoplay=1&mute=1&playsinline=1&rel=0`;
+    iframe.title = title || "Clip";
+    iframe.loading = "lazy";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+    return iframe;
+  }
+
+  function buildMp4(src, title) {
+    const video = document.createElement("video");
+    video.src = src;
+    video.controls = true;
+    video.playsInline = true;     // iOS
+    video.preload = "metadata";
+    video.setAttribute("playsinline", ""); // iOS (attribut)
+    video.setAttribute("aria-label", title || "Clip");
+    // autoplay iOS exige souvent muted + user gesture; ici on laisse controls (safe)
+    return video;
+  }
+
+  cards.forEach((card) => {
+    card.setAttribute("aria-expanded", "false");
+
+    card.addEventListener("click", () => {
+      const type = card.dataset.clipType;
+      const src = card.dataset.clipSrc;
+      const title = card.dataset.clipTitle || "Clip";
+
+      if (!type || !src) return;
+
+      // toggle: si déjà ouvert, on ferme
+      if (card.classList.contains("is-playing")) {
+        stopAllExcept(null);
+        return;
+      }
+
+      stopAllExcept(card);
+
+      const thumb = card.querySelector(".clip-thumb");
+      if (!thumb) return;
+
+      // Crée un conteneur ratio 16/9 dans la vignette
+      const holder = document.createElement("div");
+      holder.className = "clip-holder";
+
+      const player =
+        type === "mp4" ? buildMp4(src, title) : buildEmbed(src, title);
+
+      holder.appendChild(player);
+      thumb.appendChild(holder);
+
+      // Cache l’icône ▶
+      const play = card.querySelector(".clip-play");
+      if (play) play.style.display = "none";
+
+      card.classList.add("is-playing");
+      card.setAttribute("aria-expanded", "true");
+
+      // Optionnel: si MP4, tente play (souvent OK après clic)
+      if (type === "mp4") {
+        try { player.play(); } catch (e) {}
+      }
+    });
+  });
+})();
