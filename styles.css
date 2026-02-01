@@ -909,3 +909,35 @@ textarea{ min-height: 140px; resize: vertical; }
 @media (max-width: 620px){
   .dsx .dsx-grid{ grid-template-columns: 1fr; }
 }
+/* FIX FORCE — Spécialités Domsteel */
+.section.dsx .dsx-grid{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  margin-top: 10px !important;
+}
+
+.section.dsx .dsx-card{
+  display: block !important;
+  border-radius: 18px !important;
+  padding: 18px 18px 16px !important;
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,.35) !important;
+  position: relative !important;
+}
+
+.section.dsx .dsx-card::before{
+  content:"" !important;
+  position:absolute !important;
+  left: 14px !important;
+  right: 14px !important;
+  top: 12px !important;
+  height: 1px !important;
+  background: linear-gradient(90deg,
+    rgba(110,190,255,.22),
+    rgba(255,110,210,.22),
+    transparent
+  ) !important;
+  border-radius: 2px !important;
+}
